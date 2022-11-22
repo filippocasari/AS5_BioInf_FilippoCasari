@@ -19,12 +19,12 @@ must demonstrate that you clearly understand what each term means distinctively
 of the others. (max. 150 words).
 \subsection*{Answer}
 \begin{itemize}
-    \item DNA: Nucleotides are a group of complex chemicals that make up DNA. It serves as a set of instructions for how to create and sustain you and contains the genetic information of life. 
+    \item \textbf{DNA}: Nucleotides are a group of complex chemicals that make up DNA. It serves as a set of instructions for how to create and sustain you and contains the genetic information of life. 
 
     Nearly every human cell contains DNA in the nucleus, which is the center of the cell. 
     
     Except for identical twins, everyone's DNA is distinct.
-    \item  Gene: Although the DNA contained in our cells functions as a molecular instruction manual, it is not just a collection of unorganized letters. It is divided into small sections, or paragraphs, each of which contains a series of instructions on how to create a particular element of you. 
+    \item  \textbf{Gene}: Although the DNA contained in our cells functions as a molecular instruction manual, it is not just a collection of unorganized letters. It is divided into small sections, or paragraphs, each of which contains a series of instructions on how to create a particular element of you. 
 
     This tiny paragraph is a gene, which is a small piece of DNA. 
     
@@ -33,7 +33,7 @@ of the others. (max. 150 words).
     Our cells employ genes as instructions to create molecules known as proteins. Proteins play a wide variety of roles. They support the structure and function of cells as well as their communication. 
     
     Some genes instruct cells on how to produce proteins necessary for cell division and development.
-    \item Genome: A genome is an organism's whole DNA composition. 
+    \item \textbf{Genome}: A genome is an organism's whole DNA composition. 
 
     The genome would be the complete instruction manual if the DNA code were a collection of rules that were meticulously organized into paragraphs (genes) and chapters (chromosomes). 
     
@@ -45,9 +45,8 @@ of the others. (max. 150 words).
 \end{itemize}
 
 
-
-
 \section{Point 2}
+\subsection*{Question}
 Briefly describe gene prediction and why we do it. (max. 150 words)
 \subsection*{Answer}
 Finding the genomic DNA regions that encode genes is known as gene prediction or gene finding in computational biology. In addition to RNA genes and protein-coding genes, this may also include predictions of additional functional components like regulatory regions. Once a species' genome has been sequenced, one of the earliest and most crucial steps in comprehending it is gene discovery. 
@@ -56,6 +55,7 @@ A genetic map indicating the general placement of known genes in relation to one
 It's important to distinguish between figuring out whether a sequence is functional and figuring out what a gene or its product does. 
 One of the crucial phases in genome annotation, after sequence assembly, non-coding region filtering, and repeat masking, is gene prediction.
 \section{Point 3}
+\subsection*{Question}
 Describe and differentiate the three main classifications of gene prediction
 programs: ab initio based, homology based, and consensus based. (max. 150
 words)
@@ -67,19 +67,65 @@ words)
 \end{itemize}
 
 \section{Point 4}
+\subsection*{Question}
 In gene prediction, discuss the characteristics in a DNA sequence that have been
 statistically shown to point to or act as a kind of marker or clue signifying a coding
 region, i.e., genes/exons (max. 150 words).
+
 \subsection*{Answer}
+Starting by defining the ORF. It is the part of DNA that has to be translated. \\
+In non-coding DNA, stop codons are found every 20 codons or so.
+Therefore, an ORF threshold of 50–60 codons indicates the presence of a gene coding region.
+The third codon location in coding sequences is G or C rather than A or T. 
+That is why we have to look for G and C in the sequence. \\
+We have to underline 2 statistics to consider that part of DNA relevant:
+\begin{itemize}
+    \item The third codon position is where the presence of G or C is evaluated by \textbf{GC bias}.
+    \item \textbf{TESTCODE}: determines whether the same nucleotide is repeated at the third codon position.
+
+\end{itemize}
+However these metrics could miss atypical genes. 
 %\begin{figure}[H]
 %\includegraphics[width=8cm, angle=90]{b.jpeg}
 %\centering
 %\end{figure}
-
+\clearpage
 \section{Point 5}
+\subsection*{Question}
 Why do you think that gene prediction is a difficult task? (max. 300 words)
 \subsection*{Answer}
+Gene prediction is usually a difficult task 
+because of the poor presence of
+conservative motifs.
+ However, it is easier 
+ for prokaryotes than eukaryotes 
+in which we have introns, 
+exons and higher variability of the genetic code. 
+Indeed, a splicing mechanism removes
+ non-coding sequences (introns) from pre-mRNA 
+after the transcription of protein coding regions
+ is initiated at certain promoter sequences,
+  leaving the protein-encoding exons. 
+  The mature mRNA that results 
+  from the removal of the introns 
+  and some other alterations
+   to the mature RNA can then be 
+   translated in the 5 to 3 direction, 
+   typically from the first start codon 
+   to the first stop codon. The ORF 
+   corresponding to an encoded gene
+    will be broken up by the presence 
+    of introns that typically produce 
+    stop codons since intron sequences are present 
+in the genomic DNA sequences of eukaryotes. That is the reason why gene prediction for 
+eukaryotes is really difficult. 
 
-
+\section{Bibliography}
+\begin{itemize}
+    \item Professor's slides
+    \item Notes
+    \item ${https://en.wikipedia.org/wiki/Gene\_prediction}$
+    \item ${https://www.sciencedirect.com/topics/medicine-and-dentistry/gene-prediction}$
+\end{itemize}
 \end{document}
 
